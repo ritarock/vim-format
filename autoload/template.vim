@@ -1,7 +1,7 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! format#python()
+function! template#python()
   set filetype=python
   call setline(1,"def main():")
   call setline(2,"     ")
@@ -9,13 +9,13 @@ function! format#python()
   call setline(4,"    main()")
 endfunction
 
-function! format#shell()
+function! template#shell()
   set filetype=shell
   call setline(1,"#!/bin/sh")
   call setline(2,"")
 endfunction
 
-function! format#html()
+function! template#html()
   set filetype=html
   call setline(1,"<!DOCTYPE html>")
   call setline(2,"<html>")
@@ -29,7 +29,7 @@ function! format#html()
   call setline(10,"</html>")
 endfunction
 
-function! format#Dockerfile()
+function! template#Dockerfile()
   call setline(1, "FROM <image>")
   call setline(2, "MAINTAINER <name>")
   call setline(3, "WORKDIR /path/to/workdir")
@@ -40,7 +40,7 @@ function! format#Dockerfile()
   call setline(8, "ENV <key> <value>")
 endfunction
 
-function! format#markdown()
+function! template#markdown()
   set filetype=markdown
   call setline(1, "# Header1")
   call setline(2, "###### Header6")
@@ -65,7 +65,7 @@ function! format#markdown()
   call setline(20, "|text        |text         |text          |")
 endfunction
 
-function! format#vimAutoload()
+function! template#vimAutoload()
   set filetype=vim
   call setline(1,"\" プラグインの説明")
   call setline(2,"\" Version: 1.0")
@@ -85,7 +85,7 @@ function! format#vimAutoload()
   call setline(16,"unlet s:save_cpo")
 endfunction
 
-function! format#vimPlugin()
+function! template#vimPlugin()
   set filetype=vim
   call setline(1,"\" 行末スペースを削除")
   call setline(2,"\" Version: 1.0")
@@ -110,7 +110,7 @@ function! format#vimPlugin()
   call setline(21,"unlet s:save_cpo")
 endfunction
 
-function! format#lambdaPython()
+function! template#lambdaPython()
   set filetype=python
   call setline(1,"import json")
   call setline(2,"def lambda_handler(event, context):")
@@ -121,7 +121,7 @@ function! format#lambdaPython()
   call setline(7,"    }")
 endfunction
 
-function! format#lambdaNode()
+function! template#lambdaNode()
   set filetype=javascript
   call setline(1,"exports.handler = async (event) => {")
   call setline(2,"    // TODO implement")
