@@ -4,9 +4,11 @@ set cpo&vim
 function! template#python()
   set filetype=python
   call setline(1,"def main():")
-  call setline(2,"     ")
-  call setline(3,"if __name__ == '__main__':")
-  call setline(4,"    main()")
+  call setline(2,"")
+  call setline(3,"")
+  call setline(4,"")
+  call setline(5,"if __name__ == '__main__':")
+  call setline(6,"    main()")
 endfunction
 
 function! template#shell()
