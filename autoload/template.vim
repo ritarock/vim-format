@@ -1,16 +1,6 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! template#python()
-  set filetype=python
-  call setline(1,"def main():")
-  call setline(2,"")
-  call setline(3,"")
-  call setline(4,"")
-  call setline(5,"if __name__ == '__main__':")
-  call setline(6,"    main()")
-endfunction
-
 function! template#shell()
   set filetype=shell
   call setline(1,"#!/bin/sh")
@@ -110,27 +100,4 @@ function! template#vimPlugin()
   call setline(19,"")
   call setline(20,"let &cpo = s:save_cpo")
   call setline(21,"unlet s:save_cpo")
-endfunction
-
-function! template#lambdaPython()
-  set filetype=python
-  call setline(1,"import json")
-  call setline(2,"def lambda_handler(event, context):")
-  call setline(3,"    # TODO implement")
-  call setline(4,"    return {")
-  call setline(5,"        \"statusCode\": 200,")
-  call setline(6,"        \"body: json.dumps('Hello from Lambda!')")
-  call setline(7,"    }")
-endfunction
-
-function! template#lambdaNode()
-  set filetype=javascript
-  call setline(1,"exports.handler = async (event) => {")
-  call setline(2,"    // TODO implement")
-  call setline(3,"    const response = {")
-  call setline(4,"        statusCode: 200,")
-  call setline(5,"        body: JSON.stringify('Hello from Lambda!')")
-  call setline(6,"    };")
-  call setline(7,"    return response;")
-  call setline(8,"};")
 endfunction
